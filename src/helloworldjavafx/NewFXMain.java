@@ -1,21 +1,30 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
+ * HelloWorldJavaFX Version#1.0
+ * Frank Bernal
+ * CIS 084 Java Programming
+ * Input
+ * Output
+ * 21 April 2022
  */
+
 package helloworldjavafx;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.application.Platform;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.text.Font;
 
-/**
- *
- * @author frankbernal
+/*
+ * Java FX GUI Project
+ * 
  */
+
 public class NewFXMain extends Application {
     
     @Override
