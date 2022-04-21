@@ -15,10 +15,10 @@ import javafx.stage.Stage;
 import javafx.application.Platform;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.text.Font;
+import javafx.geometry.Pos;
 
 /*
  * Java FX GUI Project
@@ -27,33 +27,41 @@ import javafx.scene.text.Font;
 
 public class NewFXMain extends Application {
     
-    @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        launch(args);
-    }
+        launch(args);   // Runs the application
+    }   // End of PSV Main
     
-}
+    public void start(Stage stage) {
+        // Create a label that is displayed in the middle of the window
+        Label message = new Label("First FX Application!");
+        message.setFont(new Font(40));
+        
+        // Create buttons that can be clicked which change the message Label
+        Button helloButton = new Button("Say Hello");
+        helloButton.setOnAction(e -> message.setText("Hello World!"));
+        
+        Button goodbyeButton = new Button("Say Goodbye");
+        goodbyeButton.setOnAction(e -> message.setText("Goodbye!"));
+        
+        Button quitButton = new Button("Quit");
+        quitButton.setOnAction(e -> Platform.exit());
+        
+        // Create and HBox to hold the buttons 
+        HBox buttonBar = new HBox(20, helloButton, goodbyeButton, quitButton);
+        buttonBar.setAlignment(Pos.CENTER);
+        
+        // Create a borderPane named root
+        // to hold the message label in center and the buttons on the bottom
+        BorderPane root = new BorderPane();
+        root.setCenter(message);
+        root.setBottom(buttonBar);
+        
+        // Create displayable scene to hold root, set the title and show it
+        Scene scene = new Scene(root, 450, 200);
+        stage.setScene(scene);
+        stage.setTitle("JavaFX Hello World");
+        stage.show();
+        
+    }   // End of Start
+    
+}   // End of NewFXMain
