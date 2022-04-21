@@ -2,13 +2,14 @@
  * HelloWorldJavaFX Version#1.0
  * Frank Bernal
  * CIS 084 Java Programming
- * Input
- * Output
+ * Input: OnActions for each button
+ * Output: Different messages for each button
  * 21 April 2022
  */
 
 package helloworldjavafx;
 
+// Import libraries 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -38,16 +39,20 @@ public class NewFXMain extends Application {
         
         // Create buttons that can be clicked which change the message Label
         Button helloButton = new Button("Say Hello");
-        helloButton.setOnAction(e -> message.setText("Hello World!"));
+        helloButton.setOnAction(e -> message.setText("Hello Frank!"));
         
         Button goodbyeButton = new Button("Say Goodbye");
         goodbyeButton.setOnAction(e -> message.setText("Goodbye!"));
         
+        // Additional button requirement
+        Button successButton = new Button("Success Button");
+        successButton.setOnAction(e -> message.setText("Success!"));
+                
         Button quitButton = new Button("Quit");
         quitButton.setOnAction(e -> Platform.exit());
         
         // Create and HBox to hold the buttons 
-        HBox buttonBar = new HBox(20, helloButton, goodbyeButton, quitButton);
+        HBox buttonBar = new HBox(20, helloButton, successButton, goodbyeButton, quitButton);
         buttonBar.setAlignment(Pos.CENTER);
         
         // Create a borderPane named root
